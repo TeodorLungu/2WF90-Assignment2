@@ -19,6 +19,9 @@ def display_poly(mod , poly):
     SUP = str.maketrans("0123456789", "⁰¹²³⁴⁵⁶⁷⁸⁹") #Make translation table to display superscripts
     k = len(poly) #Store the power for each term
 
+    if poly == [0]:
+        return "0", poly
+
     for i in range(len(poly)): #Iterate through the coefficients of the polynomial starting with the leading coefficient
         k = k - 1 #Subtract 1 from the current power. If this is the first subtraction then this will be the leading power of the polynomial
         #If the powers are 1 or 0 then the formatting of those terms doesn't need superscripts or even the X
@@ -138,6 +141,12 @@ def elim_lead_zeros(p):
     return pPrime
         
 def long_div_poly(mod,a,b):
+    if deg(b) == 0: #Division with a scalar
+        digit = b[-1]
+        digit = mod_inverse(mod,digit)
+        result = mul_poly(mod,a,[digit])[1]
+        r = [0]
+        return display_poly(mod,result)[0],display_poly(mod,r)[0],result,r
     maximum = max(len(a),len(b))
     q = [0 for i in range(maximum)]
     r = a
@@ -154,6 +163,3 @@ def long_div_poly(mod,a,b):
     q = elim_lead_zeros(q)
     r = elim_lead_zeros(r)
     return display_poly(mod,q)[0],display_poly(mod,r)[0],q,r
-
-print(long_div_poly(7,[5,3,0,0,1],[3,2,1]))
-
