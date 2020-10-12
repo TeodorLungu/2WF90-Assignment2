@@ -31,3 +31,5 @@ def long_div_poly(mod,a,b):
     q = elim_lead_zeros(q)
     r = elim_lead_zeros(r)
     return display_poly(mod,q)[0],display_poly(mod,r)[0],q,r
+
+(long_div_poly(7,[5,2,3,4],[2,3,4,0]))
