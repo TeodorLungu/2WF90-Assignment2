@@ -1,10 +1,8 @@
-from isPrime import isPrime
+from variousFunctions import isPrime
 from display_poly import display_poly
-from isPrime import reduction
+from variousFunctions import reduction
 
 def add_poly(mod,f,g):
-    if (isPrime(mod)==False):
-        return "p is not prime"
     s = "" #The final result will be stored in string s
     lengthf = len(f) #Store the power for each term
     lengthg = len(g)
@@ -28,7 +26,6 @@ def add_poly(mod,f,g):
             sArray[j]+=f[i]
             j=j-1 
             reduction(sArray[i],mod)
-    display_poly(sArray,mod)
-    print(sArray)    
+    return display_poly(mod,sArray)[0], sArray  
    
-add_poly(7,[5,2,3],[2,3,4,0])        
+(add_poly(7,[5,2,3],[2,3,4,0]))    

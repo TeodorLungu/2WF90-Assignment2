@@ -1,13 +1,13 @@
 from longdivision import long_div_poly
-from longdivision import mul_poly
-from longdivision import sub_poly
-from longdivision import mod_inverse
-from longdivision import lc
-from longdivision import display_poly
-from longdivision import reduction
-from longdivision import add_poly
-from longdivision import deg
-from longdivision import elim_lead_zeros
+from mul_poly import mul_poly
+from sub_poly import sub_poly
+from variousFunctions import mod_inverse
+from variousFunctions import lc
+from display_poly import display_poly
+from variousFunctions import reduction
+from add_poly import add_poly
+from variousFunctions import deg
+from variousFunctions import elim_lead_zeros
 
 
 def equals_poly_mod(mod, f, g, h):

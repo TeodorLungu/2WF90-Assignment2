@@ -1,10 +1,8 @@
-from isPrime import isPrime
+from variousFunctions import isPrime
 from display_poly import display_poly
-from isPrime import reduction
+from variousFunctions import reduction
 
 def sub_poly(mod,f,g):
-    if (isPrime(mod)==False):
-        return "p is not prime"
     lengthf = len(f) #Store the power for each term
     lengthg = len(g)
     maximum = max(lengthf,lengthg)
@@ -25,8 +23,6 @@ def sub_poly(mod,f,g):
         sArray[j]-=g[i]
         j=j-1
         reduction(sArray[i],mod)
-        print(sArray)
-    display_poly(sArray,mod)
-    print(sArray)    
+    return display_poly(mod,sArray)[0], sArray
    
 sub_poly(7,[1,2,3],[2,3,4,0])        

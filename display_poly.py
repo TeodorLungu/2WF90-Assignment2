@@ -1,7 +1,10 @@
-def display_poly(poly , mod):
+def display_poly(mod , poly):
     s = "" #The final result will be stored in string s
     SUP = str.maketrans("0123456789", "⁰¹²³⁴⁵⁶⁷⁸⁹") #Make translation table to display superscripts
     k = len(poly) #Store the power for each term
+
+    if poly == [0]:
+        return "0", poly
 
     for i in range(len(poly)): #Iterate through the coefficients of the polynomial starting with the leading coefficient
         k = k - 1 #Subtract 1 from the current power. If this is the first subtraction then this will be the leading power of the polynomial
@@ -31,7 +34,6 @@ def display_poly(poly , mod):
             s = s + term
     
     #Print and return the result
-    print(s)
-    return s
+    return s, poly
 
-display_poly([5,1,1,-2,1,3,2,1,1,1,1,1,1,24,1,0],5)
+(display_poly(5,[5,1,1,-2,1,3,2,1,1,1,1,1,1,24,1,0]))
