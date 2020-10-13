@@ -32,5 +32,5 @@ def extended_euclid(mod,a,b):
     fy = mul_poly(mod,y,ila)[1]
     return display_poly(mod,d)[0],display_poly(mod,fx)[0],display_poly(mod,fy)[0],d,fx,fy
 
-extended_euclid(3,[1,0,2,1],[1,1,1])
+(extended_euclid(3,[1,0,2,1],[1,1,1]))
 
