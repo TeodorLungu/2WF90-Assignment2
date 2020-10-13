@@ -12,4 +12,4 @@ def mul_poly(mod,f,g):
             mArray[i+j]=reduction(mArray[i+j],mod)
     return display_poly(mod,mArray)[0], mArray                 
 
-mul_poly(7,[1,1,1],[1,-1])
+(mul_poly(2,[1],[0]))

@@ -9,4 +9,4 @@ def mul_field(mod,f,a,b):
     g=long_div_poly(mod,g,f)[3]
     return display_poly(mod,g)[0],g
 
-print(mul_field(2,[1,1,1],[1,1],[1]))
+(mul_field(2,[1,1,1],[1,1],[1]))

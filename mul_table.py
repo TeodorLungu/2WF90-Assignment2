@@ -19,4 +19,4 @@ def mul_table(mod,f):
             MatrixPretty[i][j]=display_poly(mod,Matrix[i][j])[0]
     return MatrixPretty,Matrix  
 
-(mul_table(7,[1,0]))    
+(mul_table(2,[1,1,1]))    

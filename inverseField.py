@@ -8,4 +8,4 @@ def inverseField(mod,d,a):
     else:
         return "ERROR"
 
-print(inverseField(2,[1,1,0],[1,0]))        
+(inverseField(2,[1,1,0],[0]))        
