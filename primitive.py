@@ -33,7 +33,7 @@ def primitive(mod,mod_poly,a):
     else:
         return True
 
-print(primitive(3,[1,0,0,1,-1],[2,2,2,1]))
-print(primitive(3,[1,0,0,1,-1],[2,1,1,0]))
-print(primitive(5,[1,0,1,1],[3,3]))
-print(primitive(5,[1,0,1,1],[3,1]))
+#print(primitive(3,[1,0,0,1,-1],[2,2,2,1]))
+#print(primitive(3,[1,0,0,1,-1],[2,1,1,0]))
+#print(primitive(5,[1,0,1,1],[3,3]))
+#print(primitive(5,[1,0,1,1],[3,1]))
