@@ -1,11 +1,16 @@
+import math
+
 def isPrime(p):
-    if p > 1:
-        for i in range(2, p//2):
-            if (p % i) == 0:
-                return False
-        return True        
-    else:
+    if p <=1:
         return False
+    if p == 2:
+        return True
+    if p % 2 == 0:
+        return False
+    for i in range(3, p//2):
+        if p % i == 0:
+            return False
+    return True
 
 def reduction(number,mod):
     #Reduce modulo mod if necessary
@@ -51,3 +56,11 @@ def elim_lead_zeros(p):
         pPrime[k] = p[i]
         k = k + 1
     return pPrime
+
+def primeDivisors(n):
+    prime_divisors = []
+    for i in range(1,n//2 + 2):
+        if n % i == 0 and isPrime(i):
+            prime_divisors.append(i)
+    return prime_divisors, len(prime_divisors)
+
