@@ -10,5 +10,3 @@ def equals_field(mod,f,a,b):
         return True
     else:
         return False    
-
-print(div_field(5,[1,0,2],[1,0,0],[3]))
