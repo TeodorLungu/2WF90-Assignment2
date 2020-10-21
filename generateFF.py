@@ -19,4 +19,4 @@ def generate_ff(mod,f):
             fieldPretty[i]='0'
     return fieldPretty,field
 
-generate_ff(7,[1,0])
+print(generate_ff(7,[1,0])[1])
