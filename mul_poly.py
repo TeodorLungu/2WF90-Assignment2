@@ -5,11 +5,11 @@ from variousFunctions import reduction
 def mul_poly(mod,f,g):
     lengthf = len(f) #Store the power for each term
     lengthg = len(g)
-    mArray = [0 for i in range(lengthf+lengthg-1)]
+    mArray = [0 for i in range(lengthf+lengthg-1)] #Create an empty polynomial
     for i in range(lengthf):
         for j in range(lengthg):
-            mArray[i+j]+=f[i]*g[j]
-            mArray[i+j]=reduction(mArray[i+j],mod)
+            mArray[i+j]+=f[i]*g[j] #Multiply each corresponding element
+            mArray[i+j]=reduction(mArray[i+j],mod) #Reduce each calculated product
     return display_poly(mod,mArray)[0], mArray                 
 
-(mul_poly(2,[1],[0]))
+#print(mul_poly(2,[1,3,4],[1,3,4,1,4,6]))

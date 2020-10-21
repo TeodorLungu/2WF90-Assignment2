@@ -1,17 +1,19 @@
 from variousFunctions import deg
-from extended_eulclid import extended_euclid
+from extended_euclid import extended_euclid
 from longdivision import long_div_poly
+from variousFunctions import isPrime
 
 def irreducible(mod,f):
-    #t←1
-    #while gcd(f,X^mod^t −X)=1 do t←t+1
-    #if t = n then output ‘true’ else output ‘false’
+    if (isPrime(mod)==False or f==[0]): #Check if division by 0 is wanted or if the modulo is prime
+        return False
     t = 1
     n = deg(f)
-    test = [0 for i in range(pow(mod,t)+1)]
-    test[-2]=-1  
+    test = [0 for i in range(pow(mod,t)+1)] #Create empty polynomial
+    test[-2]=-1
     test[0]=1
     test = long_div_poly(mod,test,f)[3]  
+
+    #Direct implementation of algorithm 5.1.4
     while (extended_euclid(mod,f,test)[0]=='1'):
         t = t+1
         test = [0 for i in range(pow(mod,t)+1)]
@@ -23,4 +25,4 @@ def irreducible(mod,f):
     else:
         return False   
 
-print(irreducible(2,[1,0,0,0,0,0,0,0,0,1,0,1]))   
+#print(irreducible(2,[1,0,1]))   

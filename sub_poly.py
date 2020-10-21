@@ -6,7 +6,9 @@ def sub_poly(mod,f,g):
     lengthf = len(f) #Store the power for each term
     lengthg = len(g)
     maximum = max(lengthf,lengthg)
-    sArray = [0 for i in range(maximum)]
+    sArray = [0 for i in range(maximum)] #Construct an empty polynomial of size maximum
+
+    #Add leading zeros to the polynomial that has a smaller degree
     if (lengthf == maximum):
         while (lengthg<maximum):
             g.insert(0,0)
@@ -15,14 +17,19 @@ def sub_poly(mod,f,g):
         while (lengthf<maximum):
             f.insert(0,0)
             lengthf=len(f)        
-    j=lengthf-1
+
+    #Put the polynomial with a higher degree in f
+    j= lengthf - 1
     for i in range(lengthf):
         sArray[i]=f[i]
         reduction(sArray[i],mod)
+    
+    #Subtract each corrsponding coefficients
     for i in range(lengthg-1,-1,-1):
-        sArray[j]-=g[i]
-        j=j-1
+        sArray[j] -= g[i]
+        j= j - 1
         reduction(sArray[i],mod)
+
     return display_poly(mod,sArray)[0], sArray
    
-sub_poly(7,[1,2,3],[2,3,4,0])        
+#print(sub_poly(7,[1,2,3],[2,3,4,0]))   

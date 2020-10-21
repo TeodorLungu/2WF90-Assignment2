@@ -10,15 +10,20 @@ from variousFunctions import elim_lead_zeros
 from variousFunctions import lc
 from variousFunctions import primeDivisors
 from display_field import display_field
-
+from variousFunctions import isPrime
+from irreducible import irreducible
+#Rise a polynomial to a power by reapeated multiplication
 def exponentiation(mod,mod_poly,a,power):
     r = a
     for i in range(power - 1):
         r = mul_poly(mod, r, a)[1]
-    return display_field(mod,mod_poly,r)[1]
+    return display_field(mod,mod_poly,r)[1] #Reduce the final polynomial
 
 
+#Direct implementation of algorithm 4.4.3 hence no further explanation
 def primitive(mod,mod_poly,a):
+    if isPrime(mod)==False: #Check if mod is prime
+        return False
     degree = deg(mod_poly)
     q = mod**degree
     q = q - 1
@@ -33,7 +38,4 @@ def primitive(mod,mod_poly,a):
     else:
         return True
 
-#print(primitive(3,[1,0,0,1,-1],[2,2,2,1]))
-#print(primitive(3,[1,0,0,1,-1],[2,1,1,0]))
-#print(primitive(5,[1,0,1,1],[3,3]))
-#print(primitive(5,[1,0,1,1],[3,1]))
+#print(primitive(7,[1,0,1],[2,2]))        

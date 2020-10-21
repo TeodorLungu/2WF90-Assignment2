@@ -4,14 +4,13 @@ def display_poly(mod , poly):
     k = len(poly) #Store the power for each term
 
     if poly == [0]:
-        return "0", poly
+        return "0", [0]
 
     for i in range(len(poly)): #Iterate through the coefficients of the polynomial starting with the leading coefficient
         k = k - 1 #Subtract 1 from the current power. If this is the first subtraction then this will be the leading power of the polynomial
         #If the powers are 1 or 0 then the formatting of those terms doesn't need superscripts or even the X
         if (i != len(poly) - 1 and i != len(poly) - 2):
-            term = "X" + str(k)
-            term = term.translate(SUP)
+            term = "X^" + str(k)
         elif i == len(poly) - 2:
             term = "X"
         else:
@@ -35,5 +34,6 @@ def display_poly(mod , poly):
     
     #Print and return the result
     return s, poly
-
-(display_poly(5,[5,1,1,-2,1,3,2,1,1,1,1,1,1,24,1,0]))
+    
+#print(display_poly(5,[5,1,1,-2,1,3,2,1,1,1,1,1,1,24,1,0]))
+#print(display_poly(7,[0]))
