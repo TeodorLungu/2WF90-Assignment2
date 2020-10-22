@@ -23,6 +23,11 @@ from subtract_field import subtract_field
 from variousFunctions import isPrime, elim_lead_zeros
 ### STUDENT PERSPECTIVE (example) ###
 
+### AfS software assignment 1 ###
+# ### Group 22 ###
+# ### Paul Zelina; Ana Popa; Teodor Lungu; Radu Lucian Radulescu ###
+# ### 1431153;     1440098;  1416332;      1438808               ###
+
 # Below code should behave like a black-box.
 # That means that by clicking RUN (and, perhaps, changing the location of the exercise file), your output file should be generated.
 

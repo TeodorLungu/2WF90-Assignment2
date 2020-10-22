@@ -1,3 +1,7 @@
+### AfS software assignment 1 ###
+# ### Group 22 ###
+# ### Paul Zelina; Ana Popa; Teodor Lungu; Radu Lucian Radulescu ###
+# ### 1431153;     1440098;  1416332;      1438808               ###
 import random
 from irreducible import irreducible
 from variousFunctions import elim_lead_zeros

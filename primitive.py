@@ -1,3 +1,7 @@
+### AfS software assignment 1 ###
+# ### Group 22 ###
+# ### Paul Zelina; Ana Popa; Teodor Lungu; Radu Lucian Radulescu ###
+# ### 1431153;     1440098;  1416332;      1438808               ###
 from display_poly import display_poly
 from mul_poly import mul_poly
 from sub_poly import sub_poly

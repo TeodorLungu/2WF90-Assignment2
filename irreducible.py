@@ -1,3 +1,7 @@
+### AfS software assignment 1 ###
+# ### Group 22 ###
+# ### Paul Zelina; Ana Popa; Teodor Lungu; Radu Lucian Radulescu ###
+# ### 1431153;     1440098;  1416332;      1438808               ###
 from variousFunctions import deg
 from extended_euclid import extended_euclid
 from longdivision import long_div_poly
