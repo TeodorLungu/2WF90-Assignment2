@@ -36,9 +36,9 @@ def find_prim(mod,mod_poly):
         r = random.randint(0, len(field) - 1)
         a = field[r]
     elim_lead_zeros(a)
-    return display_field(mod,mod_poly,a)[0],display_field(mod,mod_poly,a)[1]
+    return display_field(mod,mod_poly,a)
 
-#print(find_prim(3,[1,0,0,1,-1]))
+#print(find_prim(7,[1,0,1]))
 #print(primitive(7,[1,0,1],[6,3]))
 #print(primitive(7,[1,0,1],[6,2]))
 #print(primitive(7,[1,0,6],[2,2]))

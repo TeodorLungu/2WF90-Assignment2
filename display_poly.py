@@ -1,9 +1,11 @@
+from variousFunctions import elim_lead_zeros
+
 def display_poly(mod , poly):
     s = "" #The final result will be stored in string s
     SUP = str.maketrans("0123456789", "⁰¹²³⁴⁵⁶⁷⁸⁹") #Make translation table to display superscripts
     k = len(poly) #Store the power for each term
 
-    if poly == [0]:
+    if elim_lead_zeros(poly) == [0]:
         return "0", [0]
 
     for i in range(len(poly)): #Iterate through the coefficients of the polynomial starting with the leading coefficient
@@ -33,7 +35,7 @@ def display_poly(mod , poly):
             s = s + term
     
     #Print and return the result
-    return s, poly
+    return s, elim_lead_zeros(poly)
     
 #print(display_poly(5,[5,1,1,-2,1,3,2,1,1,1,1,1,1,24,1,0]))
-#print(display_poly(7,[0]))
+#print(display_poly(7,[0,0]))

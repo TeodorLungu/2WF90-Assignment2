@@ -20,7 +20,7 @@ from mul_table import mul_table
 from primitive import primitive
 from sub_poly import sub_poly
 from subtract_field import subtract_field
-from variousFunctions import isPrime
+from variousFunctions import isPrime, elim_lead_zeros
 ### STUDENT PERSPECTIVE (example) ###
 
 # Below code should behave like a black-box.
@@ -80,6 +80,7 @@ for exercise in my_exercises['exercises']:
         mod = params['mod']
         mod_poly = params['mod-poly']
         a = params['a']
+        params['a']=elim_lead_zeros(a)
         if isPrime(mod)==False:
             params['answer'] = "ERROR"
             params['answer-poly'] = []
@@ -151,12 +152,14 @@ for exercise in my_exercises['exercises']:
     if operation == 'find-prim':
         mod = params['mod']
         mod_poly = params['mod-poly']
-        if isPrime(mod)==False:
+        params['mod-poly']=elim_lead_zeros(mod_poly)
+        if isPrime(mod)==False or not(irreducible(mod,mod_poly)):
             params['answer'] = "ERROR"
             params['answer-poly'] = []
         else:
-            params['answer'] = find_prim(mod,mod_poly)[0]
-            params['answer-poly'] = find_prim(mod,mod_poly)[1]
+            answer = find_prim(mod,mod_poly)
+            params['answer']= answer[0]
+            params['answer-poly'] = answer[1]
 
     if operation == 'inverse-field':
         mod = params['mod']
